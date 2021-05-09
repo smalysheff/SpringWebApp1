@@ -1,1 +1,1 @@
-# SpringWebApp1
+# Simple example SpringWebApp1
