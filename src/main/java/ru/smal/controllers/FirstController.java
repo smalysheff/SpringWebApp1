@@ -1,6 +1,7 @@
 package ru.smal.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,9 +24,11 @@ public class FirstController {
 
     @GetMapping("/goodbye")
     public String goodbyePage(@RequestParam(value = "name", required = false) String name,
-                              @RequestParam(value = "surename", required = false) String surename){
+                              @RequestParam(value = "surename", required = false) String surename,
+                              Model model){
 
-        System.out.println("Hello, " + name + " " + surename);
+//        System.out.println("Hello, " + name + " " + surename);
+        model.addAttribute("message", "Hello, " + name + " " + surename);
 
         return "first/goodbye";
     }
